@@ -1,0 +1,22 @@
+{
+  "name": "hi-zone-chill-scape",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "phaser": "^3.55.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamhi/hi-zone-chill-scape.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamhi/hi-zone-chill-scape/issues"
+  },
+  "homepage": "https://github.com/iamhi/hi-zone-chill-scape#readme",
+  "description": ""
+}
