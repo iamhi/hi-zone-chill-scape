@@ -64,7 +64,7 @@ if (currentTask == 'dev') {
       directory: path.join(__dirname, 'public'),
     },
     hot: true,
-    port: 3000,
+    port: 3001,
     host: '0.0.0.0',
     client: {
       logging: 'error',
