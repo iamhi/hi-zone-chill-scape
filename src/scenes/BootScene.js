@@ -5,15 +5,17 @@ export default class BootScene extends Phaser.Scene {
 		super({ key: 'BootScene' });
 	}
 
-	preload() {
-		this.load.image('mustang', '/test/mustang-gt/mustang-full.gif');
+	create() {
+		const text = this.add.text(100, 100, '', { font: '64px Courier', fill: '#ffe28a' });
+
+		text.setText('Click to start...');
+
+		this.input.on('pointerdown', () => {
+			this.nextScene();
+		});
 	}
 
-	create() {
-		this.add.image(
-			window.game.config.width / 2,
-			window.game.config.height / 2,
-			'mustang',
-		);
+	nextScene() {
+		this.scene.start('LoadingScene');
 	}
 }
