@@ -10,6 +10,13 @@ const fse = require('fs-extra');
 const PACKAGE_PATHS = {
     '@src': path.resolve(__dirname, 'src'),
     '@assets': path.resolve(__dirname, 'src/assets'),
+    '@utils': path.resolve(__dirname, 'src/utils'),
+    '@characters': path.resolve(__dirname, 'src/gameobjects/characters'),
+    '@gameobjects': path.resolve(__dirname, 'src/gameobjects/environment'),
+    '@eventcontrol': path.resolve(__dirname, 'src/gameobjects/eventcontrol'),
+    '@eventemitters': path.resolve(__dirname, 'src/gameobjects/eventemitters'),
+    '@statemanagement': path.resolve(__dirname, 'src/gameobjects/statemanagement'),
+    '@statics': path.resolve(__dirname, 'src/gameobjects/statics'),
     modules: path.join(__dirname, 'node_modules'),
 };
 
