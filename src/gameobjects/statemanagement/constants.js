@@ -46,3 +46,6 @@ const WEATHER_ARRAY = [
 ];
 
 export enumCreator(WEATHER_ARRAY);
+
+// Place
+// TODO
