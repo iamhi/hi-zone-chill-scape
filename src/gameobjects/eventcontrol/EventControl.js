@@ -2,8 +2,7 @@
 // Activate appropriate event emitters
 import EventsRegistry from '@eventemitters/EventsRegistry';
 
-export class EventControl {
-
+export default class EventControl {
 	constructor() {
 		this._eventRegistry = new EventsRegistry();
 	}
@@ -11,8 +10,8 @@ export class EventControl {
 	transitionToState(state) {
 		this._currentState = state;
 
-		const characterEmitters = this._eventRegistry.getCharactersForState(state);
-		const environmentEmitters = this._eventRegistry.getEnvironmentsForState(state);
+		const newCharacterEmitters = this._eventRegistry.getCharactersForState(state);
+		const newEnvironmentEmitters = this._eventRegistry.getEnvironmentsForState(state);
 
 		this._beginTransition(newCharacterEmitters, newEnvironmentEmitters);
 	}
@@ -23,9 +22,9 @@ export class EventControl {
 
 	// Rename arguments to make more logic
 	_getMissingEmitters(oldEmitters, newEmitters) {
-		const newEmitterTypes = newEmitters.map(emitter => emitter.getType());
+		const newEmitterTypes = newEmitters.map((emitter) => emitter.getType());
 
-		return oldEmitters.filter(emitter => !newEmitterTypes.includes(emitter.getType()));
+		return oldEmitters.filter((emitter) => !newEmitterTypes.includes(emitter.getType()));
 	}
 
 	_beginTransition(newCharacterEmitters, newEnvironmentEmitters) {

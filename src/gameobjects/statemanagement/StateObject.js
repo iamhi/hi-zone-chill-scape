@@ -4,7 +4,7 @@ import {
 	WEATHER_ENUM,
 };
 
-export class StateOject {
+export default class StateOject {
 	constructor(season, partOfDay, weather) {
 		if (SEASON_ENUM[season]) {
 			this._season = season;

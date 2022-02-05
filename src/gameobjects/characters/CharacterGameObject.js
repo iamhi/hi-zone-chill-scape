@@ -1,3 +1,21 @@
-export class CharacterGameObject {
+export default class CharacterGameObject {
+	create() {
 
+	}
+
+	prepare() {
+
+	}
+
+	start() {
+
+	}
+
+	action() {
+
+	}
+
+	stop() {
+
+	}
 }

@@ -1,5 +1,5 @@
 // Has simple constant movement
 // No interaction
-export class EnvironmentGameObject {
-	
+export default class EnvironmentGameObject {
+
 }

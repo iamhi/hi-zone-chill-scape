@@ -1,5 +1,4 @@
-export class ControlFlow {
-
+export default class ControlFlow {
 	setParent(parent) {
 		this._parent = parent;
 	}
@@ -25,7 +24,7 @@ export class ControlFlow {
 	_nextState() {
 		this._currentState = this._pickNextState();
 
-		if(this._parent) {
+		if (this._parent) {
 			this.notifyStateChange(this._currentState);
 		}
 	}

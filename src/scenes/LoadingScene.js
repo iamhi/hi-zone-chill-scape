@@ -16,9 +16,11 @@ export default class LoadingScene extends Phaser.Scene {
 	}
 
 	loadAssets() {
-		this.mockTimer = this.time.delayedCall(3000, () => this.mockTransition(), []);
+		// this.mockTimer = this.time.delayedCall(3000, () => this.mockTransition(), []);
 
 		this.load.image('mustang', '/test/mustang-gt/mustang-full.gif');
+
+		this.nextScene();
 	}
 
 	mockTransition() {

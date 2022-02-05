@@ -16,6 +16,7 @@ const PACKAGE_PATHS = {
     '@eventcontrol': path.resolve(__dirname, 'src/gameobjects/eventcontrol'),
     '@eventemitters': path.resolve(__dirname, 'src/gameobjects/eventemitters'),
     '@statemanagement': path.resolve(__dirname, 'src/gameobjects/statemanagement'),
+    '@world': path.resolve(__dirname, 'src/gameobjects/world'),
     '@statics': path.resolve(__dirname, 'src/gameobjects/statics'),
     modules: path.join(__dirname, 'node_modules'),
 };

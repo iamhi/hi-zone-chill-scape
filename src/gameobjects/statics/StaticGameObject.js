@@ -1,4 +1,4 @@
 // Static objects such as background color
-export class StaticGameObject {
+export default class StaticGameObject {
 
 }

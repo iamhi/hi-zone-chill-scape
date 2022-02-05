@@ -10,9 +10,11 @@ export default class BootScene extends Phaser.Scene {
 
 		text.setText('Click to start...');
 
-		this.input.on('pointerdown', () => {
-			this.nextScene();
-		});
+		// this.input.on('pointerdown', () => {
+		// 	this.nextScene();
+		// });
+
+		this.nextScene();
 	}
 
 	nextScene() {
