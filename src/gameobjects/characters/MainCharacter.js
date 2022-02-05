@@ -27,16 +27,6 @@ export default class MainCharacter extends CharacterGameObject {
 
 	start() {
 		this._startIdleMovement();
-
-		setInterval(() => {
-			if (this._isMoving) {
-				this._isMoving = false;
-				this._startIdleMovement();
-			} else {
-				this._isMoving = true;
-				this._startDashingMovement();
-			}
-		}, [7000]);
 	}
 
 	_startIdleMovement() {
@@ -77,5 +67,19 @@ export default class MainCharacter extends CharacterGameObject {
 			duration: 2000,
 			onComplete: () => this._startDashingMovement(),
 		});
+	}
+
+	toggleMovement() {
+		if (this._isMoving) {
+			this._isMoving = false;
+			this._startIdleMovement();
+		} else {
+			this._isMoving = true;
+			this._startDashingMovement();
+		}
+	}
+
+	isMoving() {
+		return this._isMoving;
 	}
 }

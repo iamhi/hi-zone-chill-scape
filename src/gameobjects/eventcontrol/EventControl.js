@@ -2,6 +2,10 @@
 // Activate appropriate event emitters
 import EventsRegistry from '@eventemitters/EventsRegistry';
 
+import {
+	STATE_TRANSITION_PERIOD,
+} from './constants';
+
 export default class EventControl {
 	constructor() {
 		this._eventRegistry = new EventsRegistry();
@@ -16,6 +20,11 @@ export default class EventControl {
 		const newEnvironmentEmitters = this._eventRegistry.getEnvironmentsForState(state);
 
 		this._beginTransition(newCharacterEmitters, newEnvironmentEmitters);
+	}
+
+	notifyMovementChange(isMoving) {
+		this._characterEmitters.forEach((emitter) => emitter.notifyMovementChange(isMoving));
+		this._environmentEmitters.forEach((emitter) => emitter.notifyMovementChange(isMoving));
 	}
 
 	_increaseEmitters(emitters) {
@@ -47,7 +56,7 @@ export default class EventControl {
 
 		// run timer and call _endTransition at the end
 		// Send only the endingEmitters
-		setTimeout(() => this._endTransition(newCharacterEmitters, newEnvironmentEmitters), 10000);
+		setTimeout(() => this._endTransition(newCharacterEmitters, newEnvironmentEmitters), STATE_TRANSITION_PERIOD);
 	}
 
 	_endTransition(newCharacterEmitters, newEnvironmentEmitters) {

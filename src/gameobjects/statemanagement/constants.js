@@ -13,7 +13,7 @@ const SEASON_ARRAY = [
 	FALL,
 ];
 
-export enumCreator(SEASON_ARRAY);
+export const SEASON_ENUM = enumCreator(SEASON_ARRAY);
 
 // Time
 export const MORNING = 'MORNING';
@@ -28,7 +28,7 @@ const PART_OF_DAY_ARRAY = [
 	NIGHT,
 ];
 
-export enumCreator(PART_OF_DAY_ARRAY);
+export const PART_OF_DAY_ENUM = enumCreator(PART_OF_DAY_ARRAY);
 
 // Weather
 export const CLEAR = 'CLEAR';
@@ -45,7 +45,19 @@ const WEATHER_ARRAY = [
 	WIND,
 ];
 
-export enumCreator(WEATHER_ARRAY);
+export const WEATHER_ENUM = enumCreator(WEATHER_ARRAY);
 
 // Place
-// TODO
+export const CITY = 'CITY';
+export const FOREST = 'FOREST';
+export const COAST = 'COAST';
+export const LAKE = 'LAKE';
+
+const PLACE_ARRAY = [
+	CITY,
+	FOREST,
+	COAST,
+	LAKE,
+];
+
+export const PLACE_ENUM = enumCreator(PLACE_ARRAY);

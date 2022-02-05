@@ -1,5 +1,6 @@
 import EventControl from '@eventcontrol/EventControl';
 import MainCharacter from '@characters/MainCharacter';
+import { Input } from 'phaser';
 
 import ControlFlow from './ControlFlow';
 
@@ -13,6 +14,8 @@ export default class WorldGameObject {
 
 	prepare() {
 		this._mainCharacter.create(this._scene);
+
+		this._createMovementAction();
 	}
 
 	start() {
@@ -28,7 +31,17 @@ export default class WorldGameObject {
 		this._currentState = newState;
 	}
 
+	signalMovementChange() {
+		this._eventControl.notifyMovementChange(this._mainCharacter.isMoving());
+	}
+
 	_signalStateTransition(oldState, newState) {
 		this._eventControl.transitionToState(newState);
+	}
+
+	_createMovementAction() {
+		this._movementKey = this._scene.input.keyboard.addKey(Input.Keyboard.KeyCodes.W);
+
+		this._movementKey.on('down', () => this._mainCharacter.toggleMovement());
 	}
 }

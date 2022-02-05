@@ -1,0 +1,1 @@
+export const STATE_TRANSITION_PERIOD = 10000;

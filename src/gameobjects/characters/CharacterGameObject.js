@@ -1,10 +1,6 @@
 export default class CharacterGameObject {
-	create() {
-
-	}
-
-	prepare() {
-
+	create(scene) {
+		this._scene = scene;
 	}
 
 	start() {
@@ -16,6 +12,10 @@ export default class CharacterGameObject {
 	}
 
 	stop() {
+
+	}
+
+	isActive() {
 
 	}
 }
