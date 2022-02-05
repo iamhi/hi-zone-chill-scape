@@ -5,6 +5,8 @@ import EventsRegistry from '@eventemitters/EventsRegistry';
 export default class EventControl {
 	constructor() {
 		this._eventRegistry = new EventsRegistry();
+		this._characterEmitters = [];
+		this._environmentEmitters = [];
 	}
 
 	transitionToState(state) {

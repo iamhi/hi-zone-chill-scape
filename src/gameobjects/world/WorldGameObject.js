@@ -29,6 +29,6 @@ export default class WorldGameObject {
 	}
 
 	_signalStateTransition(oldState, newState) {
-		this._eventControl(newState);
+		this._eventControl.transitionToState(newState);
 	}
 }

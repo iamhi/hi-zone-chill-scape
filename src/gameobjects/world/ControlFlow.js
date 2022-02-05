@@ -15,17 +15,21 @@ export default class ControlFlow {
 
 	_startTimers() {
 		// start timers that will control the flow
+		setTimeout(() => this._nextState(), [1000]);
 	}
 
 	_pickNextState() {
-
+		return {
+			characterEventTypes: [],
+			environmentEventTypes: [],
+		};
 	}
 
 	_nextState() {
 		this._currentState = this._pickNextState();
 
 		if (this._parent) {
-			this.notifyStateChange(this._currentState);
+			this._parent.notifyStateChange(this._currentState);
 		}
 	}
 }
