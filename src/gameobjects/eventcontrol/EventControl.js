@@ -7,10 +7,11 @@ import {
 } from './constants';
 
 export default class EventControl {
-	constructor() {
+	constructor(scene) {
 		this._eventRegistry = new EventsRegistry();
 		this._characterEmitters = [];
 		this._environmentEmitters = [];
+		this._scene = scene;
 	}
 
 	transitionToState(state) {
@@ -48,8 +49,8 @@ export default class EventControl {
 		endingEnvironmentEmitters.forEach((emitter) => emitter.decrease());
 
 		// all new emitters can be started
-		newCharacterEmitters.forEach((emitter) => emitter.start());
-		newEnvironmentEmitters.forEach((emitter) => emitter.start());
+		newCharacterEmitters.forEach((emitter) => emitter.start(this._scene));
+		newEnvironmentEmitters.forEach((emitter) => emitter.start(this._scene));
 
 		// append new to old emitters here
 		// TODO

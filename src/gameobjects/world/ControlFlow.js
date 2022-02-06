@@ -21,7 +21,7 @@ export default class ControlFlow {
 	_pickNextState() {
 		return {
 			characterEventTypes: [],
-			environmentEventTypes: [],
+			environmentEventTypes: ['background-middle'],
 		};
 	}
 

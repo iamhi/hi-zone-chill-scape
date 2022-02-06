@@ -7,7 +7,7 @@ import ControlFlow from './ControlFlow';
 export default class WorldGameObject {
 	constructor(scene) {
 		this._scene = scene;
-		this._eventControl = new EventControl();
+		this._eventControl = new EventControl(scene);
 		this._controlFlow = new ControlFlow();
 		this._mainCharacter = new MainCharacter();
 	}

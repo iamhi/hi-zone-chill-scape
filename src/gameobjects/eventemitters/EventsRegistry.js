@@ -1,12 +1,23 @@
+import BackgroundMiddleEmitter from './BackgroundMiddleEmitter';
+
 export default class EventsRegistry {
 	_hasEvent(eventType) {
 		console.warn({ eventType });
+
+		if (BackgroundMiddleEmitter.getType() === eventType) {
+			return true;
+		}
 
 		return false;
 	}
 
 	_getEventForType(eventType) {
 		console.warn({ eventType });
+		if (BackgroundMiddleEmitter.getType() === eventType) {
+			return new BackgroundMiddleEmitter();
+		}
+
+		return undefined;
 	}
 
 	getCharactersForState(state) {
