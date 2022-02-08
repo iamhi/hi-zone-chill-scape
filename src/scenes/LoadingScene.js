@@ -7,7 +7,7 @@ export default class LoadingScene extends Phaser.Scene {
 		super({ key: 'LoadingScene' });
 	}
 
-	create() {
+	preload() {
 		this.messageText = this.add.text(100, 100, '', { font: '64px Courier', fill: '#ffe28a' });
 
 		this.setMessageText(this.loadingMessage);
@@ -15,19 +15,15 @@ export default class LoadingScene extends Phaser.Scene {
 		this.loadAssets();
 	}
 
-	loadAssets() {
-		// this.mockTimer = this.time.delayedCall(3000, () => this.mockTransition(), []);
-
-		this.load.image('mustang', '/test/mustang-gt/mustang-full.gif');
-		this.load.image('rocks_1_set_2', '/test/env/PNG/game_background_2/rocks_1.png');
-		this.load.image('rocks_2_set_2', '/test/env/PNG/game_background_2/rocks_2.png');
-		this.load.image('rocks_3_set_2', '/test/env/PNG/game_background_2/rocks_3.png');
-
+	create() {
 		this.nextScene();
 	}
 
-	mockTransition() {
-		this.nextScene();
+	loadAssets() {
+		this.load.image('mustang', '/test/mustang-gt/mustang-full.gif');
+		this.load.image('rocks_1_set_2', '/test/env/PNG/game_background_2/layers/rocks_1.png');
+		this.load.image('rocks_2_set_2', '/test/env/PNG/game_background_2/layers/rocks_2.png');
+		this.load.image('rocks_3_set_2', '/test/env/PNG/game_background_2/layers/rocks_3.png');
 	}
 
 	setMessageText(text) {

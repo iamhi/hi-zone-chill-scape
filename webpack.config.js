@@ -12,7 +12,7 @@ const PACKAGE_PATHS = {
     '@assets': path.resolve(__dirname, 'src/assets'),
     '@utils': path.resolve(__dirname, 'src/utils'),
     '@characters': path.resolve(__dirname, 'src/gameobjects/characters'),
-    '@gameobjects': path.resolve(__dirname, 'src/gameobjects/environment'),
+    '@environment': path.resolve(__dirname, 'src/gameobjects/environment'),
     '@eventcontrol': path.resolve(__dirname, 'src/gameobjects/eventcontrol'),
     '@eventemitters': path.resolve(__dirname, 'src/gameobjects/eventemitters'),
     '@statemanagement': path.resolve(__dirname, 'src/gameobjects/statemanagement'),

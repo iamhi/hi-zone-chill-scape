@@ -1,5 +1,5 @@
 // Summon characters or environment that will act on it's own
-// import BackgroundMiddleObject from '@environments/BackgroundMiddleObject';
+import BackgroundMiddleObject from '@environment/BackgroundMiddleObject';
 
 export const EMITTER_TYPE = 'background-middle';
 export const INTERVAL_TIME = 10000;
@@ -57,8 +57,7 @@ export default class EventEmitter {
 	}
 
 	dispose() {
-		// stops timer
-		// deletes all characters/environments
+		// TODO: test in future
 		if (this._timer) {
 			clearInterval(this._timer);
 		}
@@ -69,6 +68,28 @@ export default class EventEmitter {
 	}
 
 	trigger() {
-		console.warn('trigger attempt');
+		const inactiveObject = this._getInactiveObject();
+
+		if (inactiveObject) {
+			return inactiveObject.restart();
+		}
+
+		const newObject = this._createObject();
+
+		this._backgroundObjects.push(newObject);
+
+		return newObject.start();
+	}
+
+	_getInactiveObject() {
+		return this._backgroundObjects.find((gameObject) => !gameObject.isActive());
+	}
+
+	_createObject() {
+		const gameObject = new BackgroundMiddleObject();
+
+		gameObject.create(this._scene);
+
+		return gameObject;
 	}
 }

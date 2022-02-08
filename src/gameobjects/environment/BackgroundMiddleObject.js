@@ -2,12 +2,15 @@ import EnvironmentGameObject from './EnvironmentGameObject';
 
 export const OBJECT_TYPE = 'background-middle-object';
 export const SPRITE = 'rocks_2_set_2';
+export const SPRITE_DEPTH = -3;
 export const SPEED = 6000;
 export const START_POSITION_X = 1080;
 export const START_POSITION_Y = 150;
 
 export default class BackgroundMiddleObject extends EnvironmentGameObject {
 	constructor() {
+		super();
+
 		this._isActive = false;
 		this._sprite = undefined;
 		this._tween = undefined;
@@ -21,19 +24,22 @@ export default class BackgroundMiddleObject extends EnvironmentGameObject {
 		this._scene = scene;
 		this._sprite = this._scene.add.sprite(150, 150, SPRITE);
 		this._tween = this._scene.tweens.add({
+			paused: true,
 			targets: this._sprite,
 			x: -1,
 			duration: SPEED,
 			onComplete: () => this.stop(),
+			depth: SPRITE_DEPTH,
 		});
 	}
 
 	start() {
 		this._isActive = true;
-		this._tween.start();
+		this._tween.play();
 	}
 
 	stop() {
+		console.warn('This was stopped');
 		this._isActive = false;
 	}
 
